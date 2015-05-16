@@ -1,22 +1,21 @@
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>Adri's Django Girls blog</title>
     </head>
     <body>
         <div>
             <h1><a href="">Adri's Django Girls Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 16.05.2015, 15:25</p>
-            <h2><a href="">Hello World!</a></h2>
-            <p>Lorem ipsum.</p>
-        </div>
+        {% for post in posts %}
+          <div>
+            <p>published: {{ post.published_date }}
+              <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }} </p>
+          </div>
+        {% endfor %}
 
-        <div>
-            <p>published: 16.05.2015, 15:30</p>
-            <h2><a href="">This is me again</a></h2>
-            <p>Lorem ipsum.</p>
-        </div>
+      {{ posts }}
+
     </body>
 </html>
